@@ -58,6 +58,8 @@ window.onload = function() {
   let workers = [person1, person2, person3, person4, person5, person6];
   workers.map(item => {
     console.log(item.name);
-    item.skills.map(element);
+    item.skills.map(element => {
+      // console.log(" " + element);
+    });
   });
 };
