@@ -5,7 +5,7 @@ import "./style.css";
 import "./assets/img/rigo-baby.jpg";
 import "./assets/img/4geeks.ico";
 
-window.onload = function() {
+window.onload = function () {
   //write your code here
   console.log("Hello Rigo from the console!");
 
@@ -59,7 +59,26 @@ window.onload = function() {
   workers.map(item => {
     console.log(item.name);
     item.skills.map(element => {
-      // console.log(" " + element);
+      console.log(" " + element);
     });
   });
+
+
+  const tag = document.querySelector('#list')
+  tag.className = 'text-primary alert-danger p-4'
+
+  let text = ''
+  workers.map((item) => {
+    text += `<h2 class="text-danger">${item.name}, ${item.age}, ${item.job}</h2>`
+    text += '<ul class="list-group">'
+    item.skills.map((element) => {
+      text += `<li class="list-group-item">${element}</li>`
+    })
+    text += '</ul>'
+  })
+
+
+tag.innerHTML = text
+console.log(tag.innerHTML)
+
 };
